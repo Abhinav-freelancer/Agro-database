@@ -1,0 +1,24 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sample Agricultural Area in Maharashtra",
+        "description": "A sample agricultural area in Maharashtra, India for NDVI analysis"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [73.8, 18.4],
+            [73.9, 18.4],
+            [73.9, 18.5],
+            [73.8, 18.5],
+            [73.8, 18.4]
+          ]
+        ]
+      }
+    }
+  ]
+}

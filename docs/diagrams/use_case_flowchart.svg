@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="800" viewBox="0 0 1000 800">
+  <!-- Styles -->
+  <style>
+    .title { font: bold 24px sans-serif; fill: #333; }
+    .subtitle { font: bold 18px sans-serif; fill: #555; }
+    .actor { font: bold 16px sans-serif; fill: #333; }
+    .action { font: 14px sans-serif; fill: #333; }
+    .decision { font: 14px sans-serif; fill: #333; }
+    .box { stroke-width: 2; rx: 5; ry: 5; }
+    .actor-box { fill: #E1F5FE; stroke: #0288D1; }
+    .action-box { fill: #F1F8E9; stroke: #689F38; }
+    .decision-box { fill: #FFF3E0; stroke: #FF9800; }
+    .output-box { fill: #F3E5F5; stroke: #8E24AA; }
+    .arrow { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    .dashed-arrow { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); stroke-dasharray: 5,5; }
+  </style>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="500" y="40" class="title" text-anchor="middle">Geospatial Agricultural Intelligence System - Use Case Flowchart</text>
+  
+  <!-- User Types -->
+  <rect x="50" y="80" width="900" height="60" class="box" fill="#E8EAF6" stroke="#3F51B5" />
+  <text x="500" y="110" class="subtitle" text-anchor="middle">User Types</text>
+  
+  <!-- Farmer Actor -->
+  <rect x="100" y="160" width="200" height="60" class="box actor-box" />
+  <text x="200" y="195" class="actor" text-anchor="middle">Farmer</text>
+  
+  <!-- Policymaker Actor -->
+  <rect x="400" y="160" width="200" height="60" class="box actor-box" />
+  <text x="500" y="195" class="actor" text-anchor="middle">Policymaker</text>
+  
+  <!-- Researcher Actor -->
+  <rect x="700" y="160" width="200" height="60" class="box actor-box" />
+  <text x="800" y="195" class="actor" text-anchor="middle">Researcher</text>
+  
+  <!-- Location Selection -->
+  <rect x="50" y="260" width="900" height="60" class="box" fill="#E8F5E9" stroke="#4CAF50" />
+  <text x="500" y="290" class="subtitle" text-anchor="middle">Location Selection Methods</text>
+  
+  <!-- Village Selection -->
+  <rect x="100" y="340" width="200" height="60" class="box action-box" />
+  <text x="200" y="375" class="action" text-anchor="middle">Village Selection</text>
+  
+  <!-- District Selection -->
+  <rect x="400" y="340" width="200" height="60" class="box action-box" />
+  <text x="500" y="375" class="action" text-anchor="middle">District Selection</text>
+  
+  <!-- Shapefile Upload -->
+  <rect x="700" y="340" width="200" height="60" class="box action-box" />
+  <text x="800" y="375" class="action" text-anchor="middle">Shapefile Upload</text>
+  
+  <!-- Data Processing -->
+  <rect x="50" y="420" width="900" height="60" class="box" fill="#FFF8E1" stroke="#FFC107" />
+  <text x="500" y="450" class="subtitle" text-anchor="middle">Data Processing & Analysis</text>
+  
+  <!-- Farmer Data Processing -->
+  <rect x="100" y="500" width="200" height="80" class="box decision-box" />
+  <text x="200" y="530" class="decision" text-anchor="middle">Soil pH, Organic Carbon</text>
+  <text x="200" y="550" class="decision" text-anchor="middle">NDVI-based Crop Health</text>
+  <text x="200" y="570" class="decision" text-anchor="middle">Fertilizer Requirements</text>
+  
+  <!-- Policymaker Data Processing -->
+  <rect x="400" y="500" width="200" height="80" class="box decision-box" />
+  <text x="500" y="530" class="decision" text-anchor="middle">Aggregated Rainfall</text>
+  <text x="500" y="550" class="decision" text-anchor="middle">Cropping Pattern</text>
+  <text x="500" y="570" class="decision" text-anchor="middle">Drought Zone Mapping</text>
+  
+  <!-- Researcher Data Processing -->
+  <rect x="700" y="500" width="200" height="80" class="box decision-box" />
+  <text x="800" y="530" class="decision" text-anchor="middle">Sentinel-2 NDVI</text>
+  <text x="800" y="550" class="decision" text-anchor="middle">Time-series Analysis</text>
+  <text x="800" y="570" class="decision" text-anchor="middle">Custom Data Extraction</text>
+  
+  <!-- Outputs -->
+  <rect x="50" y="600" width="900" height="60" class="box" fill="#F3E5F5" stroke="#9C27B0" />
+  <text x="500" y="630" class="subtitle" text-anchor="middle">User-specific Outputs</text>
+  
+  <!-- Farmer Output -->
+  <rect x="100" y="680" width="200" height="80" class="box output-box" />
+  <text x="200" y="710" class="action" text-anchor="middle">Crop Recommendation</text>
+  <text x="200" y="730" class="action" text-anchor="middle">Fertilizer Dosage</text>
+  <text x="200" y="750" class="action" text-anchor="middle">Mobile-friendly Report</text>
+  
+  <!-- Policymaker Output -->
+  <rect x="400" y="680" width="200" height="80" class="box output-box" />
+  <text x="500" y="710" class="action" text-anchor="middle">Subsidy Planning Data</text>
+  <text x="500" y="730" class="action" text-anchor="middle">District-level Reports</text>
+  <text x="500" y="750" class="action" text-anchor="middle">Intervention Maps</text>
+  
+  <!-- Researcher Output -->
+  <rect x="700" y="680" width="200" height="80" class="box output-box" />
+  <text x="800" y="710" class="action" text-anchor="middle">Data Export (GeoTIFF)</text>
+  <text x="800" y="730" class="action" text-anchor="middle">Time-series Graphs</text>
+  <text x="800" y="750" class="action" text-anchor="middle">Research-grade Analysis</text>
+  
+  <!-- Arrows -->
+  <!-- Farmer Flow -->
+  <path d="M200,220 L200,340" class="arrow" />
+  <path d="M200,400 L200,500" class="arrow" />
+  <path d="M200,580 L200,680" class="arrow" />
+  
+  <!-- Policymaker Flow -->
+  <path d="M500,220 L500,340" class="arrow" />
+  <path d="M500,400 L500,500" class="arrow" />
+  <path d="M500,580 L500,680" class="arrow" />
+  
+  <!-- Researcher Flow -->
+  <path d="M800,220 L800,340" class="arrow" />
+  <path d="M800,400 L800,500" class="arrow" />
+  <path d="M800,580 L800,680" class="arrow" />
+  
+  <!-- Cross-connections -->
+  <path d="M300,180 L400,180" class="dashed-arrow" />
+  <path d="M600,180 L700,180" class="dashed-arrow" />
+  
+  <path d="M300,360 L400,360" class="dashed-arrow" />
+  <path d="M600,360 L700,360" class="dashed-arrow" />
+  
+  <path d="M300,540 L400,540" class="dashed-arrow" />
+  <path d="M600,540 L700,540" class="dashed-arrow" />
+  
+  <path d="M300,720 L400,720" class="dashed-arrow" />
+  <path d="M600,720 L700,720" class="dashed-arrow" />
+</svg>

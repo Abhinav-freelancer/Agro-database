@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="800" viewBox="0 0 1000 800">
+  <!-- Styles -->
+  <style>
+    .title { font: bold 24px sans-serif; fill: #333; }
+    .subtitle { font: bold 18px sans-serif; fill: #555; }
+    .component { font: bold 14px sans-serif; fill: #fff; }
+    .description { font: 12px sans-serif; fill: #333; }
+    .arrow { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    .box { stroke-width: 2; rx: 5; ry: 5; }
+    .user-input { fill: #4285F4; stroke: #2A56C6; }
+    .vector-query { fill: #34A853; stroke: #168039; }
+    .raster-extraction { fill: #FBBC05; stroke: #B58500; }
+    .data-fusion { fill: #EA4335; stroke: #B31412; }
+    .visualization { fill: #9C27B0; stroke: #6A1B9A; }
+    .output { fill: #FF6D00; stroke: #E65100; }
+    .data { fill: #00ACC1; stroke: #007C91; }
+  </style>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="500" y="40" class="title" text-anchor="middle">Geospatial Agricultural Intelligence System - Data Pipeline</text>
+  
+  <!-- User Input Stage -->
+  <rect x="100" y="80" width="800" height="100" class="box user-input" opacity="0.8" />
+  <text x="500" y="110" class="subtitle" text-anchor="middle" fill="#fff">User Input Stage</text>
+  
+  <rect x="150" y="130" width="150" height="30" class="box" fill="#fff" stroke="#4285F4" />
+  <text x="225" y="150" class="component" text-anchor="middle" fill="#4285F4">Google Maps Search</text>
+  
+  <rect x="350" y="130" width="150" height="30" class="box" fill="#fff" stroke="#4285F4" />
+  <text x="425" y="150" class="component" text-anchor="middle" fill="#4285F4">Coordinate Input</text>
+  
+  <rect x="550" y="130" width="150" height="30" class="box" fill="#fff" stroke="#4285F4" />
+  <text x="625" y="150" class="component" text-anchor="middle" fill="#4285F4">Polygon Drawing</text>
+  
+  <rect x="750" y="130" width="100" height="30" class="box" fill="#fff" stroke="#4285F4" />
+  <text x="800" y="150" class="component" text-anchor="middle" fill="#4285F4">Upload Shapefile</text>
+  
+  <!-- Location Polygon -->
+  <rect x="400" y="210" width="200" height="40" class="box data" opacity="0.8" />
+  <text x="500" y="235" class="component" text-anchor="middle" fill="#fff">Location Polygon (GeoJSON)</text>
+  
+  <!-- Backend Processing -->
+  <rect x="50" y="280" width="900" height="350" class="box" fill="#f5f5f5" stroke="#999" opacity="0.5" />
+  <text x="500" y="310" class="subtitle" text-anchor="middle">Backend Processing</text>
+  
+  <!-- Vector Query -->
+  <rect x="100" y="340" width="250" height="120" class="box vector-query" opacity="0.8" />
+  <text x="225" y="370" class="subtitle" text-anchor="middle" fill="#fff">Step 1: Spatial Query</text>
+  <text x="225" y="395" class="description" text-anchor="middle" fill="#fff">Query PostGIS database for attributes</text>
+  <text x="225" y="415" class="description" text-anchor="middle" fill="#fff">intersecting with user location</text>
+  <text x="225" y="435" class="description" text-anchor="middle" fill="#fff">Retrieve soil, crop, climate data</text>
+  
+  <!-- Raster Extraction -->
+  <rect x="375" y="340" width="250" height="120" class="box raster-extraction" opacity="0.8" />
+  <text x="500" y="370" class="subtitle" text-anchor="middle" fill="#fff">Step 2: Raster Extraction</text>
+  <text x="500" y="395" class="description" text-anchor="middle" fill="#fff">Clip satellite datasets to polygon</text>
+  <text x="500" y="415" class="description" text-anchor="middle" fill="#fff">Apply pre-processing</text>
+  <text x="500" y="435" class="description" text-anchor="middle" fill="#fff">Generate vegetation indices</text>
+  
+  <!-- Data Fusion -->
+  <rect x="650" y="340" width="250" height="120" class="box data-fusion" opacity="0.8" />
+  <text x="775" y="370" class="subtitle" text-anchor="middle" fill="#fff">Step 3: Data Fusion</text>
+  <text x="775" y="395" class="description" text-anchor="middle" fill="#fff">Combine vector attributes with raster</text>
+  <text x="775" y="415" class="description" text-anchor="middle" fill="#fff">Normalize datasets</text>
+  <text x="775" y="435" class="description" text-anchor="middle" fill="#fff">Prepare for visualization</text>
+  
+  <!-- Data Sources -->
+  <rect x="100" y="490" width="250" height="100" class="box data" opacity="0.8" />
+  <text x="225" y="520" class="subtitle" text-anchor="middle" fill="#fff">Vector Data Sources</text>
+  <text x="225" y="545" class="description" text-anchor="middle" fill="#fff">Soil Data (ICAR-NBSS, FAO)</text>
+  <text x="225" y="565" class="description" text-anchor="middle" fill="#fff">Crop Data (Ministry of Agriculture)</text>
+  <text x="225" y="585" class="description" text-anchor="middle" fill="#fff">Climate, Water, Admin Boundaries</text>
+  
+  <!-- Raster Sources -->
+  <rect x="375" y="490" width="250" height="100" class="box data" opacity="0.8" />
+  <text x="500" y="520" class="subtitle" text-anchor="middle" fill="#fff">Raster Data Sources</text>
+  <text x="500" y="545" class="description" text-anchor="middle" fill="#fff">Sentinel-2, Landsat-8/9 (Optical)</text>
+  <text x="500" y="565" class="description" text-anchor="middle" fill="#fff">Sentinel-1 SAR (Radar)</text>
+  <text x="500" y="585" class="description" text-anchor="middle" fill="#fff">MODIS, Google Earth Engine</text>
+  
+  <!-- Processed Data -->
+  <rect x="650" y="490" width="250" height="100" class="box data" opacity="0.8" />
+  <text x="775" y="520" class="subtitle" text-anchor="middle" fill="#fff">Processed Data</text>
+  <text x="775" y="545" class="description" text-anchor="middle" fill="#fff">GeoJSON (Vector)</text>
+  <text x="775" y="565" class="description" text-anchor="middle" fill="#fff">GeoTIFF (Raster)</text>
+  <text x="775" y="585" class="description" text-anchor="middle" fill="#fff">Combined Analysis Results</text>
+  
+  <!-- Data Visualization Layer -->
+  <rect x="100" y="620" width="800" height="100" class="box visualization" opacity="0.8" />
+  <text x="500" y="650" class="subtitle" text-anchor="middle" fill="#fff">Data Visualization Layer</text>
+  
+  <rect x="150" y="670" width="150" height="30" class="box" fill="#fff" stroke="#9C27B0" />
+  <text x="225" y="690" class="component" text-anchor="middle" fill="#9C27B0">Interactive Map</text>
+  
+  <rect x="350" y="670" width="150" height="30" class="box" fill="#fff" stroke="#9C27B0" />
+  <text x="425" y="690" class="component" text-anchor="middle" fill="#9C27B0">Toggleable Layers</text>
+  
+  <rect x="550" y="670" width="150" height="30" class="box" fill="#fff" stroke="#9C27B0" />
+  <text x="625" y="690" class="component" text-anchor="middle" fill="#9C27B0">Chart Panels</text>
+  
+  <rect x="750" y="670" width="100" height="30" class="box" fill="#fff" stroke="#9C27B0" />
+  <text x="800" y="690" class="component" text-anchor="middle" fill="#9C27B0">Tabular View</text>
+  
+  <!-- User Output Stage -->
+  <rect x="100" y="750" width="800" height="30" class="box output" opacity="0.8" />
+  <text x="500" y="770" class="component" text-anchor="middle" fill="#fff">User Output: Interactive Map, Downloads (GeoJSON, GeoTIFF, PDF), Decision Support</text>
+  
+  <!-- Arrows -->
+  <!-- User Input to Location Polygon -->
+  <path d="M225,160 L225,210 L400,210" class="arrow" />
+  <path d="M425,160 L425,210" class="arrow" />
+  <path d="M625,160 L625,210 L600,210" class="arrow" />
+  <path d="M800,160 L800,210 L600,210" class="arrow" />
+  
+  <!-- Location Polygon to Processing Steps -->
+  <path d="M500,250 L500,280 L225,340" class="arrow" />
+  <path d="M500,250 L500,340" class="arrow" />
+  <path d="M500,250 L500,280 L775,340" class="arrow" />
+  
+  <!-- Data Sources to Processing Steps -->
+  <path d="M225,490 L225,460" class="arrow" />
+  <path d="M500,490 L500,460" class="arrow" />
+  
+  <!-- Processing Steps to Data Fusion -->
+  <path d="M350,400 L650,400" class="arrow" />
+  <path d="M625,400 L650,400" class="arrow" />
+  
+  <!-- Data Fusion to Processed Data -->
+  <path d="M775,460 L775,490" class="arrow" />
+  
+  <!-- Processed Data to Visualization -->
+  <path d="M775,590 L775,620" class="arrow" />
+  
+  <!-- Visualization to Output -->
+  <path d="M500,720 L500,750" class="arrow" />
+</svg>
