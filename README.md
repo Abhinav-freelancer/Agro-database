@@ -1,73 +1,97 @@
-# Welcome to your Lovable project
+# Geospatial Agricultural Intelligence System for Sustainable Agriculture in India
 
-## Project info
+## Project Overview
 
-**URL**: https://lovable.dev/projects/6159dff8-26f2-4bec-8707-74fcc5147d9d
+This project aims to develop a web-based geospatial agricultural intelligence system for sustainable agriculture in India. The system allows users to select a location (via Google Maps search, coordinates input, or polygon selection on a map) and automatically retrieves, processes, and visualizes both vector data (database attributes) and raster data (satellite imagery and derived indices) about that location.
 
-## How can I edit this code?
+## System Architecture
 
-There are several ways of editing your application.
+The system architecture consists of the following components:
 
-**Use Lovable**
+- **Frontend Client**: React.js UI, Leaflet/Mapbox for maps, D3.js/Chart.js for data visualization, and Google Maps API for location search.
+- **API Gateway**: Handles user requests and forwards them to the backend services.
+- **Backend Services**: Includes location parser, vector data service, raster data service, and analytics engine.
+- **Database Layer**: PostgreSQL with PostGIS for spatial queries and a raster datastore for large datasets.
+- **External APIs**: Integration with Google Earth Engine, Sentinel Hub, and Bhuvan APIs.
+- **Output Layer**: Provides data in various formats (GeoJSON, GeoTIFF, PDF, CSV) for download.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/6159dff8-26f2-4bec-8707-74fcc5147d9d) and start prompting.
+## Data Pipeline
 
-Changes made via Lovable will be committed automatically to this repo.
+The data pipeline follows these steps:
 
-**Use your preferred IDE**
+1. **User Input Stage**: Users can select a location using Google Maps search, direct coordinate input, polygon drawing, or shapefile upload.
+2. **Backend Processing**:
+   - **Step 1**: Spatial Query - Query PostGIS database for attributes intersecting with the user-selected location.
+   - **Step 2**: Raster Extraction - Clip satellite datasets to the user polygon and generate vegetation indices.
+   - **Step 3**: Data Fusion - Combine vector attributes with raster layers and normalize datasets.
+3. **Data Visualization Layer**: Interactive web map with toggleable layers, chart panels, and tabular views.
+4. **User Output Stage**: On-screen interactive map, download options, and decision-support outputs.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Project Roadmap
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+The project will be implemented in the following phases:
 
-Follow these steps:
+1. **Phase 1**: Setup PostGIS database, integrate Google Maps input, and display soil/rainfall vector data.
+2. **Phase 2**: Integrate satellite APIs (Sentinel Hub, GEE), implement raster extraction, and NDVI visualization.
+3. **Phase 3**: Develop analytics engine for charts, trends, and recommendations.
+4. **Phase 4**: Enable report generation (PDF, GeoTIFF, CSV downloads).
+5. **Phase 5**: Deploy on cloud (AWS/GCP) with scalable architecture.
+6. **Phase 6**: Add AI-driven decision support, mobile app, and alerting system.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Use Cases
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+The system supports three main user types:
 
-# Step 3: Install the necessary dependencies.
-npm i
+1. **Farmer**: Selects village → gets soil pH, organic carbon, NDVI-based crop health → receives recommendation for best crop + fertilizer dose.
+2. **Policymaker**: Selects district → gets aggregated rainfall, cropping pattern, drought zones → uses data for subsidy planning.
+3. **Researcher**: Uploads shapefile of study area → system extracts Sentinel-2 NDVI time-series → exports data for modeling.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## Diagrams
+
+The following diagrams are available in the `docs/diagrams` directory:
+
+- `system_architecture.svg`: Shows the components of the system architecture.
+- `data_pipeline.svg`: Illustrates the flow from user input to vector query, raster extraction, and visualization.
+- `project_roadmap.svg`: Outlines the phased development plan.
+- `use_case_flowchart.svg`: Depicts the user interactions for different user types.
+
+## Project Structure
+
+```
+agro/
+├── docs/
+│   └── diagrams/
+│       ├── system_architecture.svg
+│       ├── data_pipeline.svg
+│       ├── project_roadmap.svg
+│       └── use_case_flowchart.svg
+├── frontend/
+│   ├── public/
+│   └── src/
+│       ├── components/
+│       └── assets/
+├── backend/
+│   ├── api/
+│   ├── services/
+│   └── database/
+└── README.md
 ```
 
-**Edit a file directly in GitHub**
+## Getting Started
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+This project is currently in the planning phase. The diagrams in the `docs/diagrams` directory provide a visual representation of the system architecture, data pipeline, project roadmap, and use cases.
 
-**Use GitHub Codespaces**
+## Next Steps
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. Set up the development environment for frontend and backend.
+2. Initialize the PostgreSQL database with PostGIS extension.
+3. Develop the basic frontend UI with React.js.
+4. Implement the location selection functionality using Google Maps API.
+5. Create the API endpoints for vector data retrieval.
 
-## What technologies are used for this project?
+## Technologies
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/6159dff8-26f2-4bec-8707-74fcc5147d9d) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- **Frontend**: React.js, Leaflet.js/Mapbox GL JS, D3.js/Chart.js, Google Maps API
+- **Backend**: Python (FastAPI), GDAL, Rasterio, Shapely, GeoPandas, Google Earth Engine Python API
+- **Database**: PostgreSQL + PostGIS
+- **Cloud**: AWS/GCP (planned for deployment)
